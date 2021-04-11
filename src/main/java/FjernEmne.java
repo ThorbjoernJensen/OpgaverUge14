@@ -40,7 +40,8 @@ public class FjernEmne extends HttpServlet {
         boolean removeSucces;
         removeSucces = emneListeContext.remove(fjernEmne);
         if (removeSucces==true){
-            out.write("Det virkede! vi slettede "+ fjernEmne + " fra listen.");
+            String deleteMessage= fjernEmne + " blev fjernet fra listen";
+            request.setAttribute("removeSucces", deleteMessage);
         }
         int emneListeLængde = emneListeContext.size();
         context.setAttribute("emneListeContext", emneListeContext);

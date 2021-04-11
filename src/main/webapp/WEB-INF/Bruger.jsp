@@ -19,6 +19,7 @@ ${requestScope.brugernavn}
 </br>
 Dit session-id er:
 ${requestScope.sessionId}
+<br>
 
 <form action="TilføjEmne" method="post">
     <label for="emne">Tilføj emne </label><br>
@@ -26,6 +27,10 @@ ${requestScope.sessionId}
     <input type="submit" value="Submit">
 
 </form>
+<br>
+${requestScope.messageDublicate}
+${requestScope.removeSucces}
+<br>
 <br>
 Listen indeholder  ${sessionScope.emneListeLængde} elementer
 
@@ -37,6 +42,7 @@ Listen indeholder  ${sessionScope.emneListeLængde} elementer
 
 </c:forEach>
 
+<br>
 
 <form action="TilføjEmne" method="get">
 

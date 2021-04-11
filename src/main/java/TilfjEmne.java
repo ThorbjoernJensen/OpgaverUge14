@@ -32,6 +32,12 @@ public class TilfjEmne extends HttpServlet {
             emneListeContext = new ArrayList<>();
 
         }
+        if (emneListeContext.contains(nytEmne)){
+            String messageDublicate= "elementet findes allerede i listen";
+            request.setAttribute("messageDublicate", messageDublicate);
+        request.getRequestDispatcher("WEB-INF/Bruger.jsp").forward(request, response);
+        }
+
         emneListeContext.add(nytEmne);
         int emneListeLængde = emneListeContext.size();
         context.setAttribute("emneListeContext", emneListeContext);
