@@ -27,19 +27,23 @@ ${requestScope.sessionId}
 
 </form>
 <br>
-Du har nu tilføjet ${sessionScope.emneListeLængde} elementer
+Listen indeholder  ${sessionScope.emneListeLængde} elementer
 
-<c:forEach items="${sessionScope.emneListe}" var="element">
-    ${element}
+
+<c:forEach items="${applicationScope.emneListeContext}" var="fælleselement">
     <br>
+    ${fælleselement}
+
 
 </c:forEach>
+
 
 <form action="TilføjEmne" method="get">
 
     <input type="submit" value="gå til oversigt">
 
 </form>
+
 
 
 <%--<%=request.getAttribute("brugernavn")%>   // scriptlets  nogo--%>

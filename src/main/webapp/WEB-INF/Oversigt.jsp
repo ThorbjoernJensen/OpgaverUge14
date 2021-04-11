@@ -12,12 +12,36 @@
     <title>Oversigt</title>
 </head>
 <body>
-her kan du se alle de emner folk har tilføjet
+
+<h1>Oversigt over emner </h1>
+
+
+
+Du har selv tilføjet følgende elementer:
+<c:forEach items="${sessionScope.emneListe}" var="element">
+    <br>
+    ${element}
+
+</c:forEach>
+
+    <br>
+    <br>
+
+her kan du se emner alle brugere har tilføjet
 <c:forEach items="${applicationScope.emneListeContext}" var="fælleselement">
     <br>
     ${fælleselement}
 
 
 </c:forEach>
+    <br>
+<h2>Fjern et emne fra listen </h2>
+<form action="FjernEmne" method="post">
+    <input type="text" id="fjernemne" name="fjernemne" value=""><br>
+    <input type="submit" value="Fjern emne">
+
+</form>
+
+
 </body>
 </html>
