@@ -47,6 +47,13 @@ public class HelloServlet extends HttpServlet {
 
 
               request.setAttribute("brugernavn",inputNavn);
+
+              HttpSession session = request.getSession();
+              String sessionId = session.getId();
+              request.setAttribute("sessionId",sessionId);
+
+
+
               request.getRequestDispatcher("/WEB-INF/Bruger.jsp").forward(request,response);
 
 
@@ -54,10 +61,15 @@ public class HelloServlet extends HttpServlet {
 
           else {
 
-              out.println("<html><body>");
-              out.println("<h1>" + "hej" + inputNavn  + " dine passwords er ikke ens !" +  "</h1>");
+              String besked ="de to passwords var ikke ens - prøv igen";
+              request.setAttribute("msg",besked);
+              request.getRequestDispatcher("index.jsp").forward(request, response);
 
-              out.println("</body></html>");
+
+//              out.println("<html><body>");
+//              out.println("<h1>" + "hej" + inputNavn  + " dine passwords er ikke ens !" +  "</h1>");
+//
+//              out.println("</body></html>");
 
           }
 
@@ -70,8 +82,8 @@ public class HelloServlet extends HttpServlet {
 
 
 
-        out.write("</body>\n");
-        out.write("</html>");
+//        out.write("</body>\n");
+//        out.write("</html>");
 
     }
 

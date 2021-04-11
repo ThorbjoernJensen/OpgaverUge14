@@ -9,7 +9,7 @@
 <br/>
 
 <h2>Her kan du oprette dig som bruger</h2>
-
+${requestScope.msg}
 <form action="hello-servlet" method="post">
     <label for="navn">Navn:</label><br>
     <input type="text" id="navn" name="navn" value="John"><br>
