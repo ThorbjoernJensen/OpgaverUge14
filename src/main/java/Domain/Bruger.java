@@ -1,8 +1,11 @@
 package Domain;
 
+import java.util.List;
+
 public class Bruger {
     private String navn;
     private String password;
+    private List<String> huskeListe;
 
     public Bruger(String navn, String password) {
         this.navn = navn;
@@ -23,5 +26,8 @@ public class Bruger {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+    public List<String> getHuskeListe() {
+        return huskeListe;
     }
 }
