@@ -13,12 +13,20 @@
 </head>
 <body>
 
-<h1> velkomme du er nu logget ind !</h1>
+<%--her skal vi gerne have en ny bruger-besked--%>
+${requestScope.messageNyBruger}
+
+<h1> velkommen, du er nu logget ind!</h1>
+
+<%--hul igennem til vores brugerliste--%>
+<%--${applicationScope.brugereContext}--%>
+
 Dit brugernavn er:
-${requestScope.brugernavn}
+${sessionScope.Brugernavn}
 </br>
 Dit session-id er:
-${requestScope.sessionId}
+${sessionScope.sessionId}
+<br>
 <br>
 
 <form action="TilføjEmne" method="post">
